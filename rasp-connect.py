@@ -27,8 +27,9 @@ def print_menu():
     print "[2]. WEP"
     print "[3]. WPA"
     print "[4]. WPA2"
-    print "[5]. View Sample for wpa_supplicant.conf"
-    print "[6]. Exit" + bcolors.ENDC
+    print "[5]. WPA2 EAP"
+    print "[6]. View Sample for wpa_supplicant.conf"
+    print "[7]. Exit" + bcolors.ENDC
     print "################################################"
     print "------------------------------------------------"
 
@@ -67,12 +68,18 @@ while loop:
         os.system("sudo reboot now")
 	
     elif choice==5:
+        import modules.wpa2_eapC
+        print bcolors.WARNING + "\n[!]. Rebooting For Changes to Take Effect." + bcolors.ENDC
+        cont = raw_input("\n[!]...Press 'Return' to Continue: ")
+        os.system("sudo reboot now")
+
+    elif choice==6:
 
         import modules.wpa_supplicant
     	print bcolors.WARNING + "\n[!]. Rebooting For Changes to Take Effect." + bcolors.ENDC
         cont = raw_input("\n[!]...Press 'Return' to Continue: ")
 
-    elif choice==6:
+    elif choice==7:
 
         print bcolors.GREEN + "\nThanks for using Rasp-Connect" + bcolors.ENDC
         loop=False
